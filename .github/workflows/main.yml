@@ -25,7 +25,7 @@ jobs:
         run: dotnet restore "SimpleApi.csproj"
 
       - name: Build the application
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build "SimpleApi.csproj" -c $configuration -o /app/build
 
       - name: Run tests
         run: dotnet test --no-build --verbosity normal
